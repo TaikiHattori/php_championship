@@ -1,0 +1,95 @@
+<!-- <!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>meetupAPI</title>
+</head>
+
+<body>
+
+    <h1>meetup API</h1>
+    <button id="btn">データ取得</button>
+    <div id="output"></div>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+<!-- axiosライブラリの読み込み↓↓↓ -->
+<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+
+<!-- <script>
+
+        // リクエストを送るurlを準備
+        // const url = 'https://api.meetup.com/find/upcoming_events?key=YOUR_MEETUP_API_KEY&sign=true&photo-host=public&country=JP&city=Fukuoka&topic_category=292';
+        // ↑↑↑「YOUR_MEETUP_API_KEY」に自分のMeetup API KEY入力したかった6/13
+        //↑↑↑けど、そもそもMeetup API KEYの取得がなかなかできず中断6/13
+
+
+
+
+
+
+↑↑↑続きするなら、Meetup API KEY取得するここから！！！6/13
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // ↑?以降の意味：条件「末尾に「javascript」と名の付くAPIを持ってきてくれ」
+
+        // ↓↓↓枠自体は毎回同じ ※成功時、失敗時、成功失敗に関わらず行う処理
+
+        // ↓console内にオブジェクトで情報入って、data内に欲しいデータある
+
+        axios
+            .get(url)
+            // ↑この時点でリクエストすでにしている
+
+            .then(function (response) {
+                // リクエスト成功時の処理（responseに結果が入っている※データをもらっている）
+
+                console.log(response.data.items[3].volumeInfo.title);
+                // ↑console.log(response)したときに結果がオブジェクト状態だったので、(response)から派生して↑のようになっている
+                // volumeInfoに本一冊の情報が入っている※APIのドキュメント（説明書）みたら詳しくわかる
+
+
+                const htmlArray = []
+
+                // ↓上のconsole.log内で配列にあたるのは「response.data.items」なので、forEach前にはそれが来る
+                response.data.items.forEach(function (item) {
+                    htmlArray.push("<p>" + item.volumeInfo.title + "</p>");
+                });
+
+                console.log(htmlArray);
+                $("#output").html(htmlArray);
+
+
+            })
+            .catch(function (error) {
+                // リクエスト失敗時の処理（errorにエラー内容が入っている）
+                console.log(error);
+            })
+            .finally(function () {
+                // 成功失敗に関わらず必ず実行
+                console.log("done!");
+            });
+
+
+
+
+
+    </script>
+</body>
+
+</html>  -->
