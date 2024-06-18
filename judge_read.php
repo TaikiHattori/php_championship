@@ -46,6 +46,8 @@ $output = "";
 foreach ($result as $record) {
     $output .= "
     <tr>
+      <td>{$record["id"]}</td>
+
       <td>{$record["judge_name"]}</td>
       <td><img src='data:image/jpeg;base64," . base64_encode($record["picture"]) . "' alt='画像'></td>
       <td>{$record["judge_type"]}</td>
@@ -77,12 +79,17 @@ foreach ($result as $record) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ジャッジリスト（一覧画面）</title>
+    <title>①ジャッジリスト（一覧画面）</title>
 
     <style>
         img {
             width: 400px;
             height: 360px;
+            border-radius: 50%;
+            /* 画像を丸くする */
+            object-fit: cover;
+            /* 画像を適切に収めるためのスタイル */
+            border: 5px solid #4CAF50;
         }
 
 
@@ -122,6 +129,66 @@ foreach ($result as $record) {
             cursor: pointer;
             color: red;
         }
+
+
+        /* ジャッジid（イベント入力時使用）を赤色にする */
+        table th:first-child {
+            color: red;
+
+        }
+
+
+
+/* -------------------------------------------- */
+        /* 固定ヘッダーとスクロール可能な本文 */
+        /* ----------------------------------------- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        /* th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        } */
+
+     
+
+        thead {
+            position: sticky;
+            /* 固定ヘッダー */
+            top: 0;
+            background-color: #f2f2f2;
+        }
+
+        /* tbody {
+            display: block;
+            height: 300px; */
+            /* 本文部分の高さを固定する（適宜調整） */
+            /* overflow-y: auto; */
+            /* スクロール可能にする */
+        /* } */
+/* ------------------ */
+/* ↑これがスクロールバー邪魔する */
+/* ----------------------------- */
+
+
+        /* img {
+            width: 100px;
+           
+            height: 100px;
+          
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #4CAF50;
+        } */
+
+
+
+        
     </style>
 </head>
 
@@ -143,17 +210,21 @@ foreach ($result as $record) {
     </div>
 
 
+    <h2>①ジャッジリスト（一覧画面）</h2>
+
     <fieldset>
-        <legend>ジャッジリスト（一覧画面）<?= $_SESSION["username"] ?>さんがログイン中</legend>
-        <a href="judge_input.php">入力画面</a>
+        <legend><?= $_SESSION["username"] ?>さんがログイン中</legend>
+        <a href="judge_input.php">ジャッジ入力画面</a>
         <a href="judge_logout.php">logout</a>
+        <a href="event_read.php">イベント画面へ</a>
         <!-- <a href="judge_admin.php">管理者ページ</a> -->
         <table>
             <thead>
                 <tr>
+                    <th>ジャッジid（イベント入力時使用）</th>
                     <th>ジャッジ名</th>
                     <th>画像</th>
-                    <th>傾向</th>
+                    <th>好み</th>
                     <th>バトル組み合わせ(A vs B)</th>
                     <th>どちらを選んだ？</th>
                     <th>Aのタイプ</th>
@@ -195,61 +266,6 @@ foreach ($result as $record) {
 
 
 
-
-
-    <!-- --------------------- -->
-    <!-- 円グラフ -->
-    <!-- -------------------- -->
-
-    <h2>円グラフ</h2>
-    <canvas id="myPieChart"></canvas>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-
-
-    <script>
-        // ---------------------------------------------------------
-        // まず円グラフ1つ、次に各傾向に対して各円グラフ（複数）
-        // -------------------------------------------------
-
-
-        var ctx = document.getElementById("myPieChart");
-        var myPieChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ["大きさ", "質感", "リズム", "怒り", "スキル", "情熱", "重さ"],
-                datasets: [{
-                    backgroundColor: [
-                        "#BB5179",
-                        "#FAFF67",
-                        "#58A27C",
-                        "#3C00FF",
-                        "#66cdaa",
-                        "#87ceeb",
-                        "#ffa500",
-
-                    ],
-                    data: [1, 1, 1, 1]
-                    // 円グラフ元々の「 data: [1, 1, 1, 1]」 だけを改造
-                    // ここ「data: decadeData」で.txtファイルの保存データの「年」と円グラフが連動した
-                    // ↑GPTで出なかった
-
-
-
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: 'ジャッジ傾向'
-                }
-            }
-        });
-    </script>
-
-
-    <!-- ?php foreach ($result as $record) : ?>
-        ?= $record["judge_type"] ?>
-    ?php endforeach; ?> -->
 
 
 </body>

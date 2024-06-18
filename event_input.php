@@ -13,6 +13,83 @@ check_session_id();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>イベントリスト（入力画面）</title>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+           
+            max-width: 600px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        fieldset {
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        legend {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+
+        input[type="date"],
+        input[type="text"] {
+            width: calc(100% - 10px);
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            /*  #007bff */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            margin-right: 10px;
+            color: #4CAF50;
+            /* color: #007bff; */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+
+
+
+
+
 </head>
 
 <body>
@@ -30,7 +107,7 @@ check_session_id();
             </div>
 
             <div>
-                ジャッジid: <input type="text" name="jajji_aidi">
+                ジャッジid: <input type="text" name="jajji_aidi">※ジャッジ一覧のジャッジidを入力
             </div>
 
             <div>
