@@ -15,3 +15,7 @@ RDBのテーブル結合、入力データと円グラフの連動
 今までの中で一番時間を充てることができた。53h（G's時間を除く）。
 それはそれだとして、結果としては、やはり、まだまだだと思う。
 充てる時間をさらに増やす努力をし、毎日毎日、反省⇒改善を繰り返すしかない。
+
+http://localhost/G'sPHP%e8%ac%9b%e7%be%a9/php_championship/judge_login.php
+
+http://localhost/G'sPHP講義/php_championship/judge_login.php
