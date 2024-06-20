@@ -15,7 +15,7 @@ $sql = 'SELECT * FROM php_event_table ORDER BY created_at ASC';
 
 
 // --------------------------------------
-// RDBのテーブル結合※じっちゃんP2P
+// RDBのテーブル結合※じっちゃんP2P ★
 // ---------------------------------------
 //※下記のLEFT OUTER JOINの前に。
 //ALTER TABLE php_event_table ADD CONSTRAINT fk_user FOREIGN KEY (judge_id) REFERENCES php_judge_table(id);
@@ -25,7 +25,7 @@ $sql = 'SELECT * FROM php_event_table ORDER BY created_at ASC';
 
 
 // --------------------------------------
-// RDBのテーブル結合※じっちゃんP2P
+// RDBのテーブル結合※じっちゃんP2P 
 // ---------------------------------------
 // $sql = "SELECT*FROM php_event_table LEFT OUTER JOIN php_judge_table ON  php_event_table.judge_id =php_judge_table.id";
 //⇒MyAdminでうまくいった
